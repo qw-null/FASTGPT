@@ -33,6 +33,8 @@ jobs:
           registry: ghcr.io
           username: ${{ secrets.GH_USERNAME }}
           password: ${{ secrets.GH_PAT }}
+        permissions:
+          packages: read # this you also need
       - name: Set DOCKER_REPO_TAGGED based on branch or tag
         run: |
           echo "DOCKER_REPO_TAGGED=ghcr.io/${{ secrets.GH_USERNAME }}/fastgpt:latest" >> $GITHUB_ENV

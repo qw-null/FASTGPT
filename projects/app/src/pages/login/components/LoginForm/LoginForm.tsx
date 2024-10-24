@@ -117,20 +117,13 @@ const LoginForm = ({ setPageType, loginSuccess }: Props) => {
         {feConfigs?.docUrl && (
           <Flex alignItems={'center'} mt={7} fontSize={'mini'}>
             {t('login:policy_tip')}
-            <Link
-              ml={1}
-              href={getDocPath('/docs/agreement/terms/')}
-              target={'_blank'}
-              color={'primary.500'}
-            >
+            {/* 服务协议 */}
+            <Link ml={1} href={getDocPath('/')} target={'_blank'} color={'primary.500'}>
               {t('login:terms')}
             </Link>
             <Box mx={1}>&</Box>
-            <Link
-              href={getDocPath('/docs/agreement/privacy/')}
-              target={'_blank'}
-              color={'primary.500'}
-            >
+            {/* 隐私协议 */}
+            <Link href={getDocPath('/')} target={'_blank'} color={'primary.500'}>
               {t('login:privacy')}
             </Link>
           </Flex>

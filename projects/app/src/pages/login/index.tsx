@@ -24,7 +24,7 @@ import Script from 'next/script';
 import Loading from '@fastgpt/web/components/common/MyLoading';
 import { useLocalStorageState, useMount } from 'ahooks';
 import { useTranslation } from 'next-i18next';
-import I18nLngSelector from '@/components/Select/I18nLngSelector';
+// import I18nLngSelector from '@/components/Select/I18nLngSelector';
 import { useSystem } from '@fastgpt/web/hooks/useSystem';
 import { GET } from '@/web/common/api/request';
 import { getDocPath } from '@/web/common/system/doc';
@@ -32,7 +32,7 @@ import { getDocPath } from '@/web/common/system/doc';
 const RegisterForm = dynamic(() => import('./components/RegisterForm'));
 const ForgetPasswordForm = dynamic(() => import('./components/ForgetPasswordForm'));
 const WechatForm = dynamic(() => import('./components/LoginForm/WechatForm'));
-const CommunityModal = dynamic(() => import('@/components/CommunityModal'));
+// const CommunityModal = dynamic(() => import('@/components/CommunityModal'));
 
 const ipDetectURL = 'https://qifu-api.baidubce.com/ip/local/geo/v1/district';
 
@@ -142,11 +142,11 @@ const Login = ({ ChineseRedirectUrl }: { ChineseRedirectUrl: string }) => {
         h={'100%'}
         px={[0, '10vw']}
       >
-        {isPc && (
+        {/* {isPc && (
           <Box position={'absolute'} top={'24px'} right={'50px'}>
             <I18nLngSelector />
           </Box>
-        )}
+        )} */}
         <Flex
           flexDirection={'column'}
           w={['100%', 'auto']}
@@ -170,6 +170,7 @@ const Login = ({ ChineseRedirectUrl }: { ChineseRedirectUrl: string }) => {
               </Center>
             )}
           </Box>
+          {/* 联系我们 */}
           {feConfigs?.concatMd && (
             <Box
               mt={8}
@@ -178,12 +179,13 @@ const Login = ({ ChineseRedirectUrl }: { ChineseRedirectUrl: string }) => {
               textAlign={'center'}
               onClick={onOpen}
             >
-              {t('common:support.user.login.can_not_login')}
+              {/* {t('common:support.user.login.can_not_login')} */}
+              科学技术研究院 · 信息技术研究中心
             </Box>
           )}
         </Flex>
 
-        {isOpen && <CommunityModal onClose={onClose} />}
+        {/* {isOpen && <CommunityModal onClose={onClose} />} */}
       </Flex>
 
       {showRedirect && (
@@ -269,7 +271,7 @@ function CookiesDrawer({ onClose, onAgree }: { onClose: () => void; onAgree: () 
               textDecorationLine={'underline'}
               cursor={'pointer'}
               w={'fit-content'}
-              onClick={() => window.open(getDocPath('/docs/agreement/privacy/'), '_blank')}
+              onClick={() => window.open(getDocPath('/'), '_blank')}
             >
               {t('login:privacy_policy')}
             </Box>
